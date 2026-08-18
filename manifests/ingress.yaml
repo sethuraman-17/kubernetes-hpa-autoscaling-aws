@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: "2026-08-17T08:54:57Z"
+  generation: 2
+  name: web-ingress
+  namespace: production
+  resourceVersion: "153428"
+  uid: 6986a493-9636-4a26-8941-fce0c90320bb
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: web-service
+            port:
+              number: 80
+        path: /
+        pathType: Exact
+status:
+  loadBalancer:
+    ingress:
+    - ip: 172.31.10.249
